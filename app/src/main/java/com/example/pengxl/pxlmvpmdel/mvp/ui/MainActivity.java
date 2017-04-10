@@ -21,7 +21,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
     @Bind(R.id.tv_context)
     TextView tvContext;
     private IMainPresenter presenter;
-zs
     @OnClick(R.id.btn_send)
     public void OnSend() {
         presenter.performOnClick();
