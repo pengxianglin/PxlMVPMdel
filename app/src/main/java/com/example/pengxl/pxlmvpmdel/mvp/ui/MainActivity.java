@@ -1,6 +1,7 @@
 package com.example.pengxl.pxlmvpmdel.mvp.ui;
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.pengxl.pxlmvpmdel.R;
@@ -18,8 +19,8 @@ import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements IMainActivity {
 
-    @Bind(R.id.tv_context)
-    TextView tvContext;
+    @Bind(R.id.list_img)
+    ListView list_img;
     private IMainPresenter presenter;
     @OnClick(R.id.btn_send)
     public void OnSend() {
@@ -28,8 +29,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);
     }
 
     @Override
