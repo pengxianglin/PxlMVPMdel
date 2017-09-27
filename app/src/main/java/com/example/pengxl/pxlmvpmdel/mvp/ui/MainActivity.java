@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.pengxl.pxlmvpmdel.R;
 import com.example.pengxl.pxlmvpmdel.base.mvp.BaseActivity;
-import com.example.pengxl.pxlmvpmdel.mvp.adapter.MainAdapter;
+//import com.example.pengxl.pxlmvpmdel.mvp.adapter.MainAdapter;
 import com.example.pengxl.pxlmvpmdel.mvp.model.entity.Test;
 import com.example.pengxl.pxlmvpmdel.mvp.presenter.MainPresenter;
 
@@ -81,7 +81,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
             @Override
             public void call(List<String> strings) {
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                mRecyclerView.setAdapter(new MainAdapter(strings, getContext()));
+//                mRecyclerView.setAdapter(new MainAdapter(strings, getContext()));
             }
         });
     }
