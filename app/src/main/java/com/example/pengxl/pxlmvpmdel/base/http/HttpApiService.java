@@ -16,4 +16,6 @@ public interface HttpApiService {
 
     @GET("top250")
     Observable<HttpResult<List<Test>>> getTopMovie(@Query("start") int start, @Query("count") int count);
+
+
 }

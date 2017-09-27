@@ -1,8 +1,8 @@
 package com.example.pengxl.pxlmvpmdel.base.http;
 
-import com.example.pengxl.pxlmvpmdel.mvp.model.entity.Test;
 
-import java.util.List;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -25,13 +25,13 @@ public class HttpMethods {
 
     private HttpMethods() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.addNetworkInterceptor(new StethoInterceptor());
         builder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
         retrofit = new Retrofit.Builder().client(builder.build())
                 .addConverterFactory(ResponseConvertFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(BASE_URL)
                 .build();
-
         apiService = retrofit.create(HttpApiService.class);
     }
 
@@ -42,6 +42,7 @@ public class HttpMethods {
     public static HttpMethods getInstance() {
         return HttpMetHodsHoder.httpMethods;
     }
+
     /**
      * 添加线程管理并订阅
      *
